@@ -9,7 +9,7 @@
   --color-secondary: #27ae60;
   --color-white: #ffffff;
   --color-black: #000;
-  --color-gray0: #f8f8f8;
+  --color-gray-0: #f8f8f8;
   --color-gray-1: #dbe1e8;
   --color-gray-2: #b2becd;
   --color-gray-3: #6c7983;
@@ -18,13 +18,14 @@
   --color-gray-6: #12181b;
   --br-sm-2: 14px;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+  --transition-1: all 0.4s ease-in-out;
 }
 body {
   background: var(--color-primary);
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   color: var(--color-white);
-  transition: all 0.4s ease-in-out;
+  transition: var(--transition-1);
 }
 a {
   display: inline-block;
@@ -47,33 +48,28 @@ section {
 }
 .section {
   transform: translateX(-100%) scale(0);
-  transition: all 0.4s ease-in-out;
+  transition: var(--transition-1);
   background: var(--color-primary);
 }
 .sec1 {
   display: none;
   transform: translateY(0) scale(1);
-  /* background: rgb(53, 37, 11); */
 }
 .sec2 {
   display: none;
   transform: translateY(0) scale(1);
-  /* background: rgb(48, 9, 9); */
 }
 .sec3 {
   display: none;
   transform: translateY(0) scale(1);
-  /* background: rgb(23, 18, 56); */
 }
 .sec4 {
   display: none;
   transform: translateY(0) scale(1);
-  /* background: rgb(13, 55, 64); */
 }
 .sec5 {
   display: none;
   transform: translateY(0) scale(1);
-  /* background: rgb(8, 54, 10); */
 }
 .active {
   display: block;
@@ -134,7 +130,7 @@ section {
   grid-template-columns: repeat(2, 1fr);
   height: 100%;
 }
-.header-content .left-header {
+.left-header {
   display: flex;
   align-items: center;
   position: relative;
@@ -162,7 +158,8 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.4s ease-in-out;
+  transition: var(--transition-1);
+  transition: var(--transition-1);
   filter: grayscale(100%);
 }
 .image img:hover {
@@ -174,10 +171,10 @@ section {
   justify-content: center;
   padding-right: 8rem;
 }
-.right-header .name {
+.name {
   font-size: 2.5rem;
 }
-.right-header .name span {
+.name span {
   color: var(--color-secondary);
 }
 .right-header p {
@@ -185,7 +182,7 @@ section {
   line-height: 1.4rem;
 }
 
-.btn-con{
+.btn-con {
   display: flex;
   align-self: flex-start;
 }
@@ -204,7 +201,7 @@ section {
 .main-btn .btn-text {
   padding: 0 2rem;
 }
-.main-btn .btn-icon {
+.btn-icon {
   background: var(--color-secondary);
   display: flex;
   align-items: center;
@@ -212,83 +209,88 @@ section {
   border-radius: 50%;
   padding: 1rem;
 }
-.main-btn .btn-icon::before{
-  content: '';
+.btn-icon::before {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   transform: translateX(100%);
-  transition: all .4s ease-out;
+  transition: var(--transition-1);
   z-index: -1;
 }
-.main-btn .btn-icon:hover::before{
+.btn-icon:hover::before {
   width: 100%;
   height: 100%;
-  background:var(--color-secondary);
+  background: var(--color-secondary);
   transform: translateY(0);
-  transition: all .4s ease-out;
+  transition: all 0.4s ease-out;
 }
-.main-title{
+.main-title {
   text-align: center;
-
+  margin-top: 40px;
 }
-.main-title h2{
+.main-title h2 {
   position: relative;
   text-transform: uppercase;
   font-size: 4rem;
   font-weight: 700;
+  margin-top: px;
 }
-.main-title h2 span{
+.main-title h2 span {
   color: var(--color-secondary);
-
 }
-.main-title h2 .bg-text{
+.main-title h2 .bg-text {
   position: absolute;
   top: 50%;
   left: 50%;
   color: var(--color-gray-5);
   z-index: -1;
   transform: translate(-50%, -50%);
-  font-weight: 800;font-size: 6.3rem;
+  font-weight: 800;
+  font-size: 6.3rem;
 }
 
 /* about */
-.about-container{
+.about-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 400px);
   padding-top: 4.5rem;
   padding-bottom: 5rem;
   grid-gap: 2rem;
-
+  position: relative;
+  left: -250px;
 }
-.right-about{
+.right-about {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
+  margin-top: 120px;
+  position: absolute;
+  right: -430px;
 }
-.right-about .about-item{
+.about-item {
   border: 1px solid var(--color-gray-5);
   border-radius: 5px;
-  transition: all .4s ease-in-out;
-  box-shadow: 1px 2px 15px rgba(0, 0, 0, .1);
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
 }
-.right-about .about-item:hover{
+.about-item:hover {
   cursor: default;
   transform: translateY(-5px);
   border: 1px solid var(--color-secondary);
-  box-shadow: 1px 4px 15px rgba(0, 0, 0, .32) ;
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
 }
-.abt-text{
+.abt-text {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
 }
-.abt-text .large-text{
+.large-text {
   font-size: 3rem;
   font-weight: 700;
   color: var(--color-secondary);
 }
-.abt-text .small-text{
+.small-text {
   padding-left: 3rem;
   position: relative;
   text-transform: uppercase;
@@ -296,8 +298,8 @@ section {
   color: var(--color-gray-1);
   letter-spacing: 2px;
 }
-.abt-text .small-text::before{
-  content: '';
+.small-text::before {
+  content: "";
   position: absolute;
   left: 0;
   top: 15px;
@@ -305,18 +307,168 @@ section {
   height: 2px;
   background: var(--color-gray-5);
 }
-.left-about{
-  padding-right: 5rem;
-
+.left-about {
+  padding-right: 2rem;
+  margin-top: 40px;
+  width: 650px;
 }
-.left-about p{
+.left-about p {
   line-height: 2rem;
   padding: 1rem;
   color: var(--color-gray-1);
-  margin-left: 0;
-
 }
-.left-about h4{
+.left-about h4 {
   font-size: 2rem;
   text-transform: uppercase;
+  margin-left: 20px;
+  text-decoration: underline;
+}
+/* ive left this here today, kinda lost. the grid isnt bevhaving correctly, dunno why */
+/* to continue */
+.about-stats {
+  padding-bottom: 4rem;
+}
+.progress-bars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+}
+.prog-title {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.progress-con {
+  display: flex;
+  align-items: center;
+}
+.prog-text {
+  color: var(--color-gray-2);
+}
+.progress {
+  width: 100%;
+  height: 0.45rem;
+  background: var(--color-gray-4);
+  margin-left: 1rem;
+  position: relative;
+}
+.progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--color-secondary);
+  width: 60%;
+}
+.progress .html {
+  width: 90%;
+}
+.progress .javascript {
+  width: 75%;
+}
+.progress .css {
+  width: 70%;
+}
+.progress .Django {
+  width: 40%;
+}
+.progress .python {
+  width: 95%;
+}
+.progress .dart {
+  width: 20%;
+}
+.stat-title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 3.5rem 0;
+  position: relative;
+}
+.stat-title::before {
+  content: "";
+  left: 50%;
+  top: 0;
+  width: 40%;
+  height: 1px;
+  background: var(--color-gray-5);
+  transform: translateX(-50%);
+}
+/* timeline */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  padding-bottom: 3rem;
+}
+.timeline-item {
+  position: relative;
+  padding-left: 3rem;
+  border-left: 1px solid var(--color-gray-5);
+}
+.timeline-icon {
+  position: absolute;
+  left: -27px;
+  top: 0;
+  background: var(--color-secondary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-icon i{
+  font-size: 1.3rem;
+}
+.tl-duration{
+  padding: .2rem;
+  background-color: var(--color-gray-5);
+  border-radius: 15px;
+  display: inline-block;
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.timeline-item h5{
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.timeline-item span{
+  color: var(--color-gray-2);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.timeline-item  p{
+  color: var(--color-gray-2);
+}
+/* portfolios */
+.port-text{
+  padding: 2rem 0;
+  text-align: center;
+
+}
+.portfolios{
+  display:grid ;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+
+}
+.portfolio-item{
+  position: relative;
+}
+.portfolio-item img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.hover-items{
+  
 }
