@@ -1,0 +1,11 @@
+Include the bash-wakatime.sh file in your ~/.bashrc file with this command:
+
+source path/to/bash-wakatime.sh
+
+But if you already have a PROMPT_COMMAND variable set, just merge your own pre_prompt_command with the following one.
+
+Make sure your API Key is in your ~/.wakatime.cfg file.
+
+Open a new terminal and type commands.
+
+Activity from the bash plugin always goes in the Terminal project, so visit https://wakatime.com/projects/Terminal to see your coding activity.
