@@ -148,7 +148,7 @@ section {
 .header-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 100%;
+  min-height: 100vh;
 }
 .left-header {
   display: flex;
@@ -680,17 +680,20 @@ section {
   transform: translateX(0.1rem);
 }
 /* contact section */
+.contact{
+  padding-left: 5rem;
+  padding-right: 7rem;
+}
 .contact-content-con {
   display: flex;
   padding-top: 3.5rem;
   width: 100%;
 }
 .left-contact {
-  /* flex: 1; */
+  flex: 1;
   margin-top: 3rem;
   width: 25rem;
-  position: relative;
-  left: -8rem;
+  padding-right: 2rem;
 }
 .left-contact h4 {
   margin-top: 1rem;
@@ -753,11 +756,9 @@ section {
 }
 
 .right-contact {
-  flex: 1;
+  flex: 3;
   margin-top: 3rem;
-  position: relative;
-  right: -10rem;
-  margin-left: 0.1rem;
+  margin-left: 0.5rem;
 }
 .input-control {
   margin: 1.5rem 0;
