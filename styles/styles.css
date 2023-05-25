@@ -1,3 +1,5 @@
+/* @import 'styles/media.css' */
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +23,22 @@
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
   --transition-1: all 0.4s ease-in-out;
 }
+
+.light-mode{
+  --color-primary: #ffffff;
+  --color-secondary: #22d1f4;
+  --color-secondary-2: #22d1f4;
+  --color-white: #12181b;
+  --color-black: #000;
+  --color-gray-0: #f8f8f8;
+  --color-gray-1: #12181b;
+  --color-gray-2: #2a2e35;
+  --color-gray-3: #6c7983;
+  --color-gray-4: #454e56;
+  --color-gray-5: #b2becd;
+  --color-gray-6: #12181b;
+}
+
 body {
   background: var(--color-primary);
   font-family: "Poppins", sans-serif;
@@ -35,9 +53,10 @@ a {
   font-family: inherit;
 }
 header {
-  height: 100vh;
+  min-height: 100vh;
   color: var(--color-white);
   overflow: hidden;
+
 }
 section {
   min-height: 100vh;
@@ -226,6 +245,11 @@ section {
   transform: translateY(0);
   transition: all 0.4s ease-out;
 }
+/* below is the beginning of the section About. This actually fucked me up */
+.about{
+  padding-left: 4rem;
+
+}
 .main-title {
   text-align: center;
   margin-top: 40px;
@@ -253,21 +277,21 @@ section {
 
 /* about */
 .about-container {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(2, 400px);
+  grid-template-columns: repeat(2, 2fr);
   padding-top: 4.5rem;
   padding-bottom: 5rem;
   grid-gap: 2rem;
   position: relative;
-  left: -250px;
+  padding-right: 0 ;
 }
 .right-about {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  margin-top: 120px;
-  position: absolute;
-  right: -430px;
+  margin-top: 5rem;
+
 }
 .about-item {
   border: 1px solid var(--color-gray-5);
@@ -309,9 +333,9 @@ section {
   background: var(--color-gray-5);
 }
 .left-about {
-  padding-right: 2rem;
+  padding-right: .3rem;
   margin-top: 40px;
-  width: 650px;
+  width: 70%;
 }
 .left-about p {
   line-height: 2rem;
@@ -326,7 +350,6 @@ section {
   text-decoration: underline;
 }
 /* ive left this here today, kinda lost. the grid isnt bevhaving correctly, dunno why */
-/* to continue */
 .about-stats {
   padding-bottom: 4rem;
 }
@@ -459,13 +482,15 @@ section {
   color: var(--color-gray-2);
 }
 /* portfolios */
+.portfolio{
+  padding-left: 6rem;
+}
 .port-text {
   padding: 2rem 0;
   text-align: center;
   margin-top: 5rem;
   text-transform: uppercase;
   font-size: 1.5rem;
-  /* text-decoration: underline; */
   line-height: 2rem;
 }
 .portfolios {
@@ -474,7 +499,6 @@ section {
   grid-gap: 2rem;
   margin-top: 3rem;
   position: relative;
-  left: -12rem;
 }
 .portfolio-item {
   position: relative;
@@ -531,7 +555,6 @@ section {
   align-items: center;
 }
 .icon {
-  /* background: var(--color-secondary-2); */
   background: #00b4d8;
   height: 50px;
   width: 50px;
@@ -549,7 +572,6 @@ section {
   margin: 0 1rem;
 }
 .icon:hover {
-  /* background: var(--color-white); */
   background: #32dafcb3;
   transform: translateX(3px);
 }
@@ -562,6 +584,10 @@ section {
   transform: scale(1);
 }
 /* blogs */
+.blogs-sec{
+  padding-left: 6rem;
+}
+
 .blogs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -576,7 +602,7 @@ section {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
   transition: var(--transition-1);
   margin-top: 5rem;
-  left: -10rem;
+  /* left: -10rem; */
 }
 .blog:hover {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
@@ -750,6 +776,9 @@ textarea {
   color: var(--color-white);
   resize: none;
 }
+.right-contact input::placeholder{
+  color: var(--color-gray-2);
+}
 .ic-2 {
   display: flex;
 }
@@ -763,4 +792,30 @@ textarea {
 .submit-btn {
   display: flex;
   justify-content: flex-start;
+}
+/* theme */
+.theme-btn {
+  top: 2%;
+  right: 3.5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-gray-4);
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  transition: all .1s ease-in-out;
+
+}
+.theme-btn:active{
+  transform: translateY(-4px);
+
+}
+.theme-btn i{
+  font-size: 1.4rem;
+  color: var(--color-gray-2);
+  pointer-events: none;
 }
